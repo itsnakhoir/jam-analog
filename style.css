@@ -1,0 +1,37 @@
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 5px solid #333;
+    border-radius: 50%;
+    margin: 20px auto;
+    background: white;
+  }
+  
+  .hand {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: black;
+    top: 50%;
+    left: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: transform 0.05s ease-in-out;
+  }
+  
+  .number {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    color: #333;
+    top: 50%;
+    left: 100%;
+    transform: rotate(var(--rotate)) translate(120px) rotate(calc(-1 * var(--rotate)));
+    transform-origin: center;
+  }
+  
+  
