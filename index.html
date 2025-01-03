@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <title>Agenda dengan Jam Analog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    #clock {
+      width: 300px;
+      height: 300px;
+      border: 5px solid #333333;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 50px;
+      background-color: white;
+    }
+
+    .hand {
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: black;
+      top: 50%;
+      left: 0%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: transform 0.05s linear;
+    }
+
+    #hour-hand { height: 4px; background: #333; }
+    #minute-hand { height: 3px; background: #555; }
+    #second-hand { height: 2px; background: red; }
+
+    #agenda {
+      width: 300px;
+      background: #fff;
+      padding: 30px;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #agenda h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    #agenda ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #agenda li {
+      margin-bottom: 5px;
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+    }
+
+    #addAgendaForm {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    #addAgendaForm input, #addAgendaForm button {
+      padding: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+    <div id="clock">
+        <div id="hour-hand" class="hand hour-hand"></div>
+        <div id="minute-hand" class="hand minute-hand"></div>
+        <div id="second-hand" class="hand second-hand"></div>
+        <!-- Angka Jam -->
+        <div class="number" style="--rotate: 30;">1</div>
+        <div class="number" style="--rotate: 60;">2</div>
+        <div class="number" style="--rotate: 90;">3</div>
+        <div class="number" style="--rotate: 120;">4</div>
+        <div class="number" style="--rotate: 150;">5</div>
+        <div class="number" style="--rotate: 180;">6</div>
+        <div class="number" style="--rotate: 210;">7</div>
+        <div class="number" style="--rotate: 240;">8</div>
+        <div class="number" style="--rotate: 270;">9</div>
+        <div class="number" style="--rotate: 300;">10</div>
+        <div class="number" style="--rotate: 330;">11</div>
+        <div class="number" style="--rotate: 0;">12</div>
+      </div>
+      
+
+  <div id="agenda">
+    <h2>Agenda Harian</h2>
+    <ul id="agendaList"></ul>
+    <form id="addAgendaForm">
+      <input type="text" id="agendaInput" placeholder="Tambah agenda..." required />
+      <button type="submit">Tambah</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
